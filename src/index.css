@@ -1,111 +1,178 @@
-:root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
-
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
-
-  font: 18px/145% var(--sans);
-  letter-spacing: 0.18px;
-  color-scheme: light dark;
-  color: var(--text);
-  background: var(--bg);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
-  @media (max-width: 1024px) {
-    font-size: 16px;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
-  }
-
-  #social .button-icon {
-    filter: invert(1) brightness(2);
-  }
+/* --- 1. RESET DASAR (Wajib ada di setiap web) --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-  margin: 0;
+  background-color: #f4e8d3;
 }
 
-#root {
-  width: 1126px;
-  max-width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  border-inline: 1px solid var(--border);
-  min-height: 100svh;
+/* --- 2. DESAIN NAVBAR --- */
+.navbar {
   display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+
+  /* Ini yang membuat Navbar melayang di atas */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(43, 26, 17, 0.95);
+  z-index: 100;
 }
 
-h1,
-h2 {
-  font-family: var(--heading);
-  font-weight: 500;
-  color: var(--text-h);
-}
-
-h1 {
-  font-size: 56px;
-  letter-spacing: -1.68px;
-  margin: 32px 0;
-  @media (max-width: 1024px) {
-    font-size: 36px;
-    margin: 20px 0;
-  }
-}
-h2 {
+.logo {
   font-size: 24px;
-  line-height: 118%;
-  letter-spacing: -0.24px;
-  margin: 0 0 8px;
-  @media (max-width: 1024px) {
-    font-size: 20px;
-  }
-}
-p {
-  margin: 0;
+  font-weight: bold;
+  color: #d8c3a5;
 }
 
-code,
-.counter {
-  font-family: var(--mono);
-  display: inline-flex;
-  border-radius: 4px;
-  color: var(--text-h);
+.logo span {
+  font-size: 14px;
+  font-weight: normal;
+  letter-spacing: 2px;
 }
 
-code {
+.nav-links {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+
+.nav-links a {
+  color: #d8c3a5;
+  text-decoration: none;
   font-size: 15px;
-  line-height: 135%;
-  padding: 4px 8px;
-  background: var(--code-bg);
+}
+
+.btn-pesan {
+  background-color: #c05c3c;
+  color: white;
+  padding: 10px 24px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* --- 3. DESAIN HERO SECTION --- */
+.hero-section {
+  background-image:
+    linear-gradient(rgba(43, 26, 17, 0.8), rgba(43, 26, 17, 0.8)),
+    url("https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1200&q=80");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #f4e8d3;
+}
+
+.hero-content {
+  max-width: 800px;
+  padding: 0 20px;
+}
+
+.subtitle {
+  font-size: 14px;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+  border: 1px solid #d8c3a5;
+  display: inline-block;
+  padding: 5px 15px;
+  border-radius: 20px;
+}
+
+.hero-title {
+  font-size: 56px;
+  font-family: "Times New Roman", serif;
+  margin-bottom: 20px;
+  line-height: 1.1;
+}
+
+.hero-desc {
+  font-size: 18px;
+  margin-bottom: 40px;
+  line-height: 1.6;
+  color: #d8c3a5;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.btn-utama {
+  background-color: #c05c3c;
+  color: white;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btn-kedua {
+  background-color: transparent;
+  color: #d8c3a5;
+  padding: 15px 30px;
+  border: 1px solid #d8c3a5;
+  border-radius: 30px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* --- 4. DESAIN MENU KOPI --- */
+.kontainer-menu {
+  max-width: 900px;
+  margin: 80px auto;
+  padding: 0 20px;
+}
+
+.judul-menu {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 28px;
+  color: #292524;
+}
+
+.grid-menu {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.kartu-kopi {
+  background-color: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.gambar-kopi {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+
+.nama-kopi {
+  font-size: 20px;
+  margin-bottom: 8px;
+  color: #292524;
+}
+
+.deskripsi-kopi {
+  font-size: 14px;
+  color: #78716c;
 }

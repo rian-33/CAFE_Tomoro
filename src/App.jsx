@@ -1,122 +1,95 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
+import { useState } from "react";
+import "./index.css";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const dataMenuTomoro = [
+    {
+      id: 1,
+      title: "Tomoro Aren Latte",
+      description: "Kopi susu dengan gula aren asli yang manis dan legit.",
+      image:
+        "https://images.unsplash.com/photo-1578314675249-a6910f80cc4e?auto=format&fit=crop&w=500&q=60",
+    },
+    {
+      id: 2,
+      title: "Matcha Oat Latte",
+      description: "Paduan matcha premium Jepang dengan susu oat yang sehat.",
+      image:
+        "https://images.unsplash.com/photo-1515823662972-da6a2e4d3002?auto=format&fit=crop&w=500&q=60",
+    },
+    {
+      id: 3,
+      title: "Butterscotch Americano",
+      description: "Kopi hitam pekat dengan sentuhan sirup butterscotch.",
+      image:
+        "https://images.unsplash.com/photo-1551030173-122aabc4489c?auto=format&fit=crop&w=500&q=60",
+    },
+  ];
+
+  const [menuKopi] = useState(dataMenuTomoro);
 
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
+    <div>
+      {/* --- NAVBAR --- */}
+      <nav className="navbar">
+        <div className="logo">
+          Tomoro <span>COFFEE</span>
         </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
+
+        <ul className="nav-links">
+          <li>
+            <a href="#tentang">Tentang</a>
+          </li>
+          <li>
+            <a href="#suasana">Suasana</a>
+          </li>
+          <li>
+            <a href="#menu">Menu</a>
+          </li>
+          <li>
+            <a href="#lokasi">Lokasi</a>
+          </li>
+        </ul>
+
+        <button className="btn-pesan">Pesan Sekarang</button>
+      </nav>
+
+      {/* --- HERO SECTION --- */}
+      <section className="hero-section">
+        <div className="hero-content">
+          <p className="subtitle">TOMORO COFFEE • MAKASSAR</p>
+          <h1 className="hero-title">
+            Ruang Kerja Premium.
+            <br />
+            Rasa Kopi Terbaik.
+          </h1>
+          <p className="hero-desc">
+            Tempat kerja nyaman dengan WiFi kencang, kopi spesial, dan atmosfer
+            yang bikin kamu betah berjam-jam.
           </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
 
-      <div className="ticks"></div>
-
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
+          <div className="hero-buttons">
+            <button className="btn-utama">Booking Sekarang</button>
+            <button className="btn-kedua">Lihat Suasana</button>
+          </div>
         </div>
       </section>
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
-  )
+      {/* --- BAGIAN MENU --- */}
+      <main id="menu" className="kontainer-menu">
+        <h2 className="judul-menu">Menu Andalan Kami</h2>
+        <div className="grid-menu">
+          {menuKopi.map((kopi) => (
+            <div key={kopi.id} className="kartu-kopi">
+              <img src={kopi.image} alt={kopi.title} className="gambar-kopi" />
+              <h3 className="nama-kopi">{kopi.title}</h3>
+              <p className="deskripsi-kopi">{kopi.description}</p>
+            </div>
+          ))}
+        </div>
+      </main>
+    </div>
+  );
 }
 
-export default App
+export default App;
