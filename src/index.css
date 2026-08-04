@@ -1,41 +1,46 @@
-/* --- 1. RESET DASAR (Wajib ada di setiap web) --- */
+/* --- 1. RESET DASAR & FONT --- */
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap");
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
 }
 
 body {
-  background-color: #f4e8d3;
+  background-color: #fdfbf7;
+  color: #2e201b;
+  overflow-x: hidden;
 }
 
-/* --- 2. DESAIN NAVBAR --- */
+/* --- 2. NAVBAR --- */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px 50px;
-
-  /* Ini yang membuat Navbar melayang di atas */
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background-color: rgba(43, 26, 17, 0.95);
+  background-color: rgba(253, 251, 247, 0.95);
+  backdrop-filter: blur(10px);
   z-index: 100;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .logo {
-  font-size: 24px;
+  font-size: 22px;
   font-weight: bold;
-  color: #d8c3a5;
+  color: #2e201b;
 }
 
 .logo span {
-  font-size: 14px;
+  font-size: 12px;
   font-weight: normal;
   letter-spacing: 2px;
+  color: #c05c3c;
 }
 
 .nav-links {
@@ -45,9 +50,15 @@ body {
 }
 
 .nav-links a {
-  color: #d8c3a5;
+  color: #3a2b25;
   text-decoration: none;
-  font-size: 15px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #c05c3c;
 }
 
 .btn-pesan {
@@ -57,122 +68,546 @@ body {
   border: none;
   border-radius: 25px;
   cursor: pointer;
-  font-weight: bold;
+  font-weight: 600;
+  transition: background 0.3s;
 }
 
-/* --- 3. DESAIN HERO SECTION --- */
+.btn-pesan:hover {
+  background-color: #a34b30;
+}
+
+/* --- 3. HERO SECTION --- */
 .hero-section {
-  background-image:
-    linear-gradient(rgba(43, 26, 17, 0.8), rgba(43, 26, 17, 0.8)),
-    url("https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1200&q=80");
-  background-size: cover;
-  background-position: center;
   height: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  color: #f4e8d3;
-}
 
-.hero-content {
-  max-width: 800px;
+  /* 1. Mengubah warna teks menjadi terang karena background sudah digelapkan */
+  color: #fdfbf7;
+
+  /* 2. Memastikan foto tidak gepeng dan menutupi seluruh layar */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   padding: 0 20px;
 }
 
-.subtitle {
-  font-size: 14px;
-  letter-spacing: 3px;
-  margin-bottom: 20px;
-  border: 1px solid #d8c3a5;
-  display: inline-block;
-  padding: 5px 15px;
-  border-radius: 20px;
-}
-
 .hero-title {
-  font-size: 56px;
-  font-family: "Times New Roman", serif;
+  font-size: 48px;
   margin-bottom: 20px;
-  line-height: 1.1;
-}
+  line-height: 1.2;
 
-.hero-desc {
-  font-size: 18px;
-  margin-bottom: 40px;
-  line-height: 1.6;
-  color: #d8c3a5;
-}
-
-.hero-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
+  /* 3. Memastikan judul utama terbaca jelas dengan warna putih */
+  color: #ffffff;
+  font-weight: 700;
+  letter-spacing: -1px; /* Membuat jarak antar huruf lebih rapat agar terlihat modern */
 }
 
 .btn-utama {
   background-color: #c05c3c;
   color: white;
-  padding: 15px 30px;
+  padding: 14px 28px;
   border: none;
   border-radius: 30px;
-  font-size: 16px;
+  font-size: 15px;
+  font-weight: 600;
   cursor: pointer;
+  transition:
+    transform 0.2s,
+    background 0.3s;
+  margin-top: 10px;
 }
 
-.btn-kedua {
-  background-color: transparent;
-  color: #d8c3a5;
-  padding: 15px 30px;
-  border: 1px solid #d8c3a5;
-  border-radius: 30px;
-  font-size: 16px;
-  cursor: pointer;
+.btn-utama:hover {
+  background-color: #a34b30;
+  transform: scale(1.05);
 }
 
-/* --- 4. DESAIN MENU KOPI --- */
-.kontainer-menu {
-  max-width: 900px;
-  margin: 80px auto;
-  padding: 0 20px;
+/* --- 4. TENTANG SECTION --- */
+.tentang-section {
+  padding: 100px 50px;
+  background-color: #fdfbf7;
 }
 
-.judul-menu {
-  text-align: center;
-  margin-bottom: 30px;
-  font-size: 28px;
-  color: #292524;
-}
-
-.grid-menu {
+.tentang-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.tentang-gambar img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.tentang-teks h3 {
+  color: #c05c3c;
+  letter-spacing: 2px;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.tentang-teks h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  line-height: 1.3;
+}
+
+.tentang-teks p {
+  color: #665b55;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.stats div {
+  font-size: 13px;
+  color: #665b55;
+}
+
+.stats strong {
+  font-size: 24px;
+  color: #c05c3c;
+}
+
+/* --- 5. SUASANA SECTION --- */
+.suasana-section {
+  padding: 80px 50px;
+  background-color: #f5e8d8;
+  text-align: center;
+}
+
+.suasana-header {
+  max-width: 600px;
+  margin: 0 auto 40px;
+}
+
+.suasana-header h3 {
+  color: #c05c3c;
+  letter-spacing: 2px;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.suasana-header h2 {
+  font-size: 36px;
+}
+
+.suasana-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 250px;
+  gap: 15px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.grid-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s;
+}
+
+.grid-item img:hover {
+  transform: scale(1.02);
+}
+
+.grid-item:nth-child(2) {
+  grid-row: span 2;
+}
+
+/* --- 6. MENU UNGGULAN --- */
+.menu-unggulan-section {
+  padding: 80px 50px;
+  background-color: #fdfbf7;
+  text-align: center;
+}
+
+.menu-header {
+  max-width: 600px;
+  margin: 0 auto 40px;
+}
+
+.menu-header h3 {
+  color: #c05c3c;
+  letter-spacing: 2px;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.menu-header h2 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.grid-menu-unggulan {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.kartu-menu {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  text-align: left;
+}
+
+.gambar-container {
+  position: relative;
+  height: 180px;
+}
+
+.gambar-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: rgba(244, 232, 211, 0.95);
+  padding: 4px 10px;
+  font-size: 10px;
+  font-weight: bold;
+  border-radius: 6px;
+}
+
+.menu-info {
+  padding: 20px;
+}
+
+.menu-info h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.menu-info p {
+  font-size: 13px;
+  color: #665b55;
+  line-height: 1.5;
+}
+
+.menu-footer {
+  margin-top: 30px;
+  font-size: 13px;
+  color: #887a75;
+}
+
+/* --- 7. FASILITAS --- */
+.kontainer-fasilitas {
+  padding: 80px 50px;
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.kontainer-fasilitas h2 {
+  font-size: 36px;
+  margin-bottom: 40px;
+}
+
+.grid-fasilitas {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
 
-.kartu-kopi {
-  background-color: white;
-  padding: 15px;
+.kartu-fasilitas {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+  cursor: pointer;
+  text-align: left;
+  border: 2px solid transparent;
+  transition: 0.3s;
+}
+
+.kartu-fasilitas.aktif {
+  border-color: #c05c3c;
+}
+
+.kartu-fasilitas.aktif .ikon {
+  background-color: #c05c3c;
+  color: white;
+}
+
+.ikon {
+  font-size: 24px;
+  padding: 10px;
+  background-color: #f5e8d8;
   border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.kartu-fasilitas h3 {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.kartu-fasilitas p {
+  font-size: 13px;
+  color: #665b55;
+}
+
+/* --- 8. LOKASI --- */
+.lokasi-section {
+  padding: 80px 50px;
+  background-color: white;
+}
+
+.lokasi-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.lokasi-teks h3 {
+  color: #c05c3c;
+  letter-spacing: 2px;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.lokasi-teks h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.info-item {
+  margin-bottom: 20px;
+  font-size: 15px;
+  color: #665b55;
+}
+
+.info-item strong {
+  color: #2e201b;
+}
+
+.lokasi-peta iframe {
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* --- 9. TESTIMONI --- */
+.testimoni-section {
+  padding: 80px 50px;
+  background-color: #2e201b;
+  color: #f5e8d8;
   text-align: center;
 }
 
-.gambar-kopi {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
+.testimoni-content {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.testimoni-content h3 {
+  color: #c05c3c;
+  letter-spacing: 2px;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.testimoni-content h2 {
+  font-size: 36px;
+  margin-bottom: 30px;
+  color: white;
+}
+
+.quote-text {
+  font-size: 18px;
+  font-style: italic;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  color: #fdfbf7;
+}
+
+.author-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.avatar {
+  background: #c05c3c;
+  color: white;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.author-details {
+  text-align: left;
+  font-size: 13px;
+}
+
+.author-details strong {
+  color: white;
+  font-size: 15px;
+}
+
+.author-details span {
+  color: #a3958f;
+}
+
+.slider-nav {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  background: #5e4a42;
+  border-radius: 50%;
+}
+
+.dot.active {
+  background: #f5e8d8;
+  width: 24px;
   border-radius: 4px;
-  margin-bottom: 15px;
 }
 
-.nama-kopi {
-  font-size: 20px;
-  margin-bottom: 8px;
-  color: #292524;
+/* --- 10. RESERVASI / CTA --- */
+.reservasi-section {
+  padding: 80px 50px;
+  background-color: #251814;
+  color: white;
+  text-align: center;
 }
 
-.deskripsi-kopi {
+.reservasi-section h3 {
+  color: #c05c3c;
+  letter-spacing: 2px;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.reservasi-section h2 {
+  font-size: 36px;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.reservasi-section p {
+  color: #a3958f;
+  margin-bottom: 30px;
   font-size: 14px;
-  color: #78716c;
+}
+
+.form-reservasi-modern {
+  max-width: 550px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  text-align: left;
+}
+
+.input-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.form-reservasi-modern input,
+.form-reservasi-modern textarea {
+  padding: 15px;
+  background: #352621;
+  border: 1px solid #4a3831;
+  color: white;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.form-reservasi-modern input:focus,
+.form-reservasi-modern textarea:focus {
+  outline: none;
+  border-color: #c05c3c;
+}
+
+.btn-booking-modern {
+  background: #f5e8d8;
+  color: #2e201b;
+  padding: 15px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: 0.3s;
+}
+
+.btn-booking-modern:hover {
+  background: white;
+}
+
+.wa-link {
+  margin-top: 20px;
+  font-size: 13px;
+  color: #a3958f;
+}
+
+.wa-link a {
+  color: #f5e8d8;
+  text-decoration: underline;
+}
+
+/* --- 11. FOOTER --- */
+.footer-profesional {
+  background: #1a110e;
+  color: #887a75;
+  padding: 40px 50px;
+  text-align: center;
+  font-size: 13px;
+}
+
+/* --- RESPONSIF DASAR --- */
+@media (max-width: 768px) {
+  .tentang-grid,
+  .lokasi-grid,
+  .grid-menu-unggulan,
+  .grid-fasilitas,
+  .suasana-grid {
+    grid-template-columns: 1fr;
+  }
+  .navbar {
+    padding: 15px 20px;
+  }
 }
