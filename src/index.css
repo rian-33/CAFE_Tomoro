@@ -1,11 +1,19 @@
-/* --- 1. RESET DASAR & FONT --- */
-@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap");
+/* --- 1. RESET DASAR & FONT ELEGAN --- */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap");
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family:
+    "Montserrat", sans-serif; /* Teks biasa menjadi bersih dan modern */
+}
+
+h1,
+h2,
+h3,
+.logo {
+  font-family: "Playfair Display", serif; /* Semua judul menjadi elegan/mewah */
 }
 
 body {
@@ -17,7 +25,7 @@ body {
 /* --- 2. NAVBAR --- */
 .navbar {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* Mendorong Logo ke kiri, dan nav-right ke kanan */
   align-items: center;
   padding: 20px 50px;
   position: fixed;
@@ -43,6 +51,12 @@ body {
   color: #c05c3c;
 }
 
+nav-right {
+  display: flex;
+  align-items: center;
+  gap: 35px; /* Jarak antara jejeran menu dan tombol "Pesan Sekarang" */
+}
+
 .nav-links {
   display: flex;
   gap: 30px;
@@ -54,11 +68,55 @@ body {
   text-decoration: none;
   font-size: 14px;
   font-weight: 500;
-  transition: color 0.3s;
+  transition: color 0.3s ease; /* Transisi halus */
 }
 
+/* Teks menu berubah jadi cokelat elegan saat disentuh kursor */
 .nav-links a:hover {
-  color: #c05c3c;
+  color: #633f26;
+}
+
+/* --- TOMBOL ELEGAN (PUTIH -> COKELAT) --- */
+.btn-elegan {
+  background-color: #ffffff; /* Latar belakang putih */
+  color: #2e201b; /* Teks cokelat gelap */
+  border: 2px solid #ffffff; /* Border putih */
+  padding: 12px 28px;
+  border-radius: 30px; /* Ujung membulat yang elegan */
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Sedikit bayangan agar terlihat timbul */
+  transition: all 0.3s ease; /* Efek perubahan warna yang mulus */
+}
+
+/* Perubahan saat kursor diarahkan (hover) */
+.btn-elegan:hover {
+  background-color: #633f26; /* Latar berubah jadi cokelat */
+  color: #ffffff; /* Teks berubah jadi putih */
+  border-color: #633f26; /* Border berubah jadi cokelat */
+  transform: translateY(-2px); /* Efek tombol sedikit terangkat */
+}
+
+.btn-elegan {
+  background-color: #ffffff; /* Latar belakang putih */
+  color: #2e201b; /* Teks cokelat gelap */
+  border: 2px solid #ffffff; /* Border putih */
+  padding: 12px 28px;
+  border-radius: 30px; /* Ujung membulat yang elegan */
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Sedikit bayangan agar terlihat timbul */
+  transition: all 0.3s ease; /* Efek perubahan warna yang mulus */
+}
+
+/* Perubahan saat kursor diarahkan (hover) */
+.btn-elegan:hover {
+  background-color: #633f26; /* Latar berubah jadi cokelat */
+  color: #ffffff; /* Teks berubah jadi putih */
+  border-color: #633f26; /* Border berubah jadi cokelat */
+  transform: translateY(-2px); /* Efek tombol sedikit terangkat */
 }
 
 .btn-pesan {
@@ -317,6 +375,7 @@ body {
 }
 
 /* --- 7. FASILITAS --- */
+/* --- 7. FASILITAS --- */
 .kontainer-fasilitas {
   padding: 80px 50px;
   max-width: 1100px;
@@ -335,6 +394,7 @@ body {
   gap: 20px;
 }
 
+/* Tampilan Dasar Kartu Fasilitas */
 .kartu-fasilitas {
   display: flex;
   align-items: flex-start;
@@ -345,36 +405,63 @@ body {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
   cursor: pointer;
   text-align: left;
-  border: 2px solid transparent;
-  transition: 0.3s;
+  border: 2px solid transparent; /* Border transparan agar ukurannya tidak berubah saat di-hover */
+  transition: all 0.3s ease; /* Transisi halus untuk semua perubahan efek */
 }
 
-.kartu-fasilitas.aktif {
-  border-color: #c05c3c;
+/* Efek Saat Kursor Diarahkan (Hover) */
+.kartu-fasilitas:hover {
+  border-color: #c05c3c; /* Memunculkan border warna cokelat elegan */
+  transform: translateY(-3px); /* Sedikit terangkat */
+  box-shadow: 0 8px 25px rgba(192, 92, 60, 0.1);
 }
 
-.kartu-fasilitas.aktif .ikon {
-  background-color: #c05c3c;
-  color: white;
+.kartu-fasilitas:hover .ikon {
+  background-color: #c05c3c; /* Kotak ikon berubah jadi cokelat */
+  color: #ffffff; /* Garis ikon SVG berubah jadi putih */
 }
 
+/* Tampilan Dasar Kotak Ikon */
 .ikon {
-  font-size: 24px;
-  padding: 10px;
-  background-color: #f5e8d8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background-color: #fdf6ee; /* Krem terang sesuai gambar referensi */
+  color: #c05c3c; /* Garis SVG berwarna cokelat/terakota */
   border-radius: 8px;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.ikon-svg {
+  width: 26px;
+  height: 26px;
 }
 
 .kartu-fasilitas h3 {
   font-size: 16px;
   margin-bottom: 5px;
+  color: #2e201b;
 }
 
 .kartu-fasilitas p {
   font-size: 13px;
   color: #665b55;
+  line-height: 1.5;
 }
 
+/* Efek Klik (Aktif) agar tetap berwarna */
+.kartu-fasilitas.aktif {
+  border-color: #c05c3c;
+  background-color: #fdfbf7;
+}
+
+.kartu-fasilitas.aktif .ikon {
+  background-color: #c05c3c;
+  color: #ffffff;
+}
 /* --- 8. LOKASI --- */
 .lokasi-section {
   padding: 80px 50px;
