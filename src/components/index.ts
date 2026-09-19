@@ -1,0 +1,11 @@
+export { default as Navbar } from "./Navbar/Navbar";
+export { default as Hero } from "./Hero/Hero";
+export { default as Tentang } from "./Tentang/Tentang";
+export { default as Suasana } from "./Suasana/Suasana";
+export { default as Menu } from "./Menu/Menu";
+export { default as Fasilitas } from "./Fasilitas/Fasilitas";
+export { default as Lokasi } from "./Lokasi/Lokasi";
+export { default as Testimoni } from "./Testimoni/Testimoni";
+export { default as Reservasi } from "./Reservasi/Reservasi";
+export { default as Footer } from "./Footer/Footer";
+export { default as ErrorBoundary } from "./ErrorBoundary/ErrorBoundary";

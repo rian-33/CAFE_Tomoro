@@ -1,0 +1,46 @@
+.lokasi-section {
+  padding: 80px 50px;
+  background-color: white;
+}
+
+.lokasi-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.lokasi-teks h3 {
+  color: var(--color-accent);
+  letter-spacing: 2px;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.lokasi-teks h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.info-item {
+  margin-bottom: 20px;
+  font-size: 15px;
+  color: var(--color-muted);
+}
+
+.info-item strong {
+  color: var(--color-ink);
+}
+
+.lokasi-peta iframe {
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+@media (max-width: 768px) {
+  .lokasi-grid {
+    grid-template-columns: 1fr;
+  }
+}

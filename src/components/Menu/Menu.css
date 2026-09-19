@@ -1,0 +1,87 @@
+.menu-unggulan-section {
+  padding: 80px 50px;
+  background-color: var(--color-bg);
+  text-align: center;
+}
+
+.menu-header {
+  max-width: 600px;
+  margin: 0 auto 40px;
+}
+
+.menu-header h3 {
+  color: var(--color-accent);
+  letter-spacing: 2px;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.menu-header h2 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.grid-menu-unggulan {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.kartu-menu {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  text-align: left;
+}
+
+.gambar-container {
+  position: relative;
+  height: 180px;
+}
+
+.gambar-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: rgba(244, 232, 211, 0.95);
+  padding: 4px 10px;
+  font-size: 10px;
+  font-weight: bold;
+  border-radius: 6px;
+}
+
+.menu-info {
+  padding: 20px;
+}
+
+.menu-info h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.menu-info p {
+  font-size: 13px;
+  color: var(--color-muted);
+  line-height: 1.5;
+}
+
+.menu-footer {
+  margin-top: 30px;
+  font-size: 13px;
+  color: var(--color-muted-strong);
+}
+
+@media (max-width: 768px) {
+  .grid-menu-unggulan {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,52 @@
+.suasana-section {
+  padding: 80px 50px;
+  background-color: var(--color-cream);
+  text-align: center;
+}
+
+.suasana-header {
+  max-width: 600px;
+  margin: 0 auto 40px;
+}
+
+.suasana-header h3 {
+  color: var(--color-accent);
+  letter-spacing: 2px;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.suasana-header h2 {
+  font-size: 36px;
+}
+
+.suasana-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 250px;
+  gap: 15px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.grid-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s;
+}
+
+.grid-item img:hover {
+  transform: scale(1.02);
+}
+
+.grid-item:nth-child(2) {
+  grid-row: span 2;
+}
+
+@media (max-width: 768px) {
+  .suasana-grid {
+    grid-template-columns: 1fr;
+  }
+}

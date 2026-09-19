@@ -10,6 +10,15 @@ node_modules
 dist
 dist-ssr
 
+# Environment
+.env
+.env.*
+!.env.example
+
+# Testing
+coverage
+*.tsbuildinfo
+
 # Editor directories
 .vscode/*
 .idea

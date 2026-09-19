@@ -1,0 +1,7 @@
+.footer-profesional {
+  background: var(--color-dark-soft);
+  color: var(--color-muted-strong);
+  padding: 40px 50px;
+  text-align: center;
+  font-size: 13px;
+}

@@ -1,0 +1,85 @@
+.testimoni-section {
+  padding: 80px 50px;
+  background-color: var(--color-ink);
+  color: var(--color-cream);
+  text-align: center;
+}
+
+.testimoni-content {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.testimoni-content h3 {
+  color: var(--color-accent);
+  letter-spacing: 2px;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.testimoni-content h2 {
+  font-size: 36px;
+  margin-bottom: 30px;
+  color: white;
+}
+
+.quote-text {
+  font-size: 18px;
+  font-style: italic;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  color: var(--color-bg);
+}
+
+.author-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.avatar {
+  background: var(--color-accent);
+  color: white;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.author-details {
+  text-align: left;
+  font-size: 13px;
+}
+
+.author-details strong {
+  color: white;
+  font-size: 15px;
+}
+
+.author-details span {
+  color: var(--color-faded);
+}
+
+.slider-nav {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  background: var(--color-dot);
+  border-radius: 50%;
+}
+
+.dot.active {
+  background: var(--color-cream);
+  width: 24px;
+  border-radius: 4px;
+}

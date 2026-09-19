@@ -1,0 +1,88 @@
+.kontainer-fasilitas {
+  padding: 80px 50px;
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.kontainer-fasilitas h2 {
+  font-size: 36px;
+  margin-bottom: 40px;
+}
+
+.grid-fasilitas {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.kartu-fasilitas {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+  cursor: pointer;
+  text-align: left;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.kartu-fasilitas:hover {
+  border-color: var(--color-accent);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(192, 92, 60, 0.1);
+}
+
+.kartu-fasilitas:hover .ikon {
+  background-color: var(--color-accent);
+  color: var(--color-surface);
+}
+
+.ikon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background-color: var(--color-warm);
+  color: var(--color-accent);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.ikon-svg {
+  width: 26px;
+  height: 26px;
+}
+
+.kartu-fasilitas h3 {
+  font-size: 16px;
+  margin-bottom: 5px;
+  color: var(--color-ink);
+}
+
+.kartu-fasilitas p {
+  font-size: 13px;
+  color: var(--color-muted);
+  line-height: 1.5;
+}
+
+.kartu-fasilitas.aktif {
+  border-color: var(--color-accent);
+  background-color: var(--color-bg);
+}
+
+.kartu-fasilitas.aktif .ikon {
+  background-color: var(--color-accent);
+  color: var(--color-surface);
+}
+
+@media (max-width: 768px) {
+  .grid-fasilitas {
+    grid-template-columns: 1fr;
+  }
+}

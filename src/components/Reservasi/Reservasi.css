@@ -1,0 +1,83 @@
+.reservasi-section {
+  padding: 80px 50px;
+  background-color: var(--color-dark);
+  color: white;
+  text-align: center;
+}
+
+.reservasi-section h3 {
+  color: var(--color-accent);
+  letter-spacing: 2px;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.reservasi-section h2 {
+  font-size: 36px;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.reservasi-section p {
+  color: var(--color-faded);
+  margin-bottom: 30px;
+  font-size: 14px;
+}
+
+.form-reservasi-modern {
+  max-width: 550px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  text-align: left;
+}
+
+.input-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.form-reservasi-modern input,
+.form-reservasi-modern textarea {
+  padding: 15px;
+  background: var(--color-input);
+  border: 1px solid var(--color-input-border);
+  color: white;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.form-reservasi-modern input:focus,
+.form-reservasi-modern textarea:focus {
+  outline: none;
+  border-color: var(--color-accent);
+}
+
+.btn-booking-modern {
+  background: var(--color-cream);
+  color: var(--color-ink);
+  padding: 15px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: 0.3s;
+}
+
+.btn-booking-modern:hover {
+  background: white;
+}
+
+.wa-link {
+  margin-top: 20px;
+  font-size: 13px;
+  color: var(--color-faded);
+}
+
+.wa-link a {
+  color: var(--color-cream);
+  text-decoration: underline;
+}
