@@ -6,6 +6,7 @@ export interface MenuItem {
   desc: string;
   badge: string;
   img: string;
+  kategori: string;
 }
 
 export interface FasilitasItem {

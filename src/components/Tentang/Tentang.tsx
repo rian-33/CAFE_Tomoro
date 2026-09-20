@@ -1,4 +1,5 @@
 import foto6 from "@/assets/FOTO-6.jpeg";
+import CountUp from "@/components/CountUp/CountUp";
 import "./Tentang.css";
 
 export default function Tentang() {
@@ -17,22 +18,22 @@ export default function Tentang() {
           </p>
           <div className="stats">
             <div>
-              <strong>100+</strong>
+              <CountUp className="stat-value" value={100} suffix="+" />
               <br />
               Tempat Duduk
             </div>
             <div>
-              <strong>2</strong>
+              <CountUp className="stat-value" value={2} />
               <br />
               Lantai
             </div>
             <div>
-              <strong>2023</strong>
+              <CountUp className="stat-value" value={2023} />
               <br />
               Berdiri
             </div>
             <div>
-              <strong>4.0</strong>
+              <CountUp className="stat-value" value={4} decimals={1} />
               <br />
               Rating
             </div>

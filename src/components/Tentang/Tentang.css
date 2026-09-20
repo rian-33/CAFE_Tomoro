@@ -51,9 +51,13 @@
   color: var(--color-muted);
 }
 
-.stats strong {
+.stats .stat-value {
+  display: inline-block;
   font-size: 24px;
   color: var(--color-accent);
+  font-weight: bold;
+  font-family: var(--font-serif);
+  min-width: 0.7em;
 }
 
 @media (max-width: 768px) {

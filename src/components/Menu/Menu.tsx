@@ -1,7 +1,15 @@
-import { menuItems } from "@/data/menu";
+import { useState } from "react";
+import { menuCategories, menuItems } from "@/data/menu";
 import "./Menu.css";
 
 export default function Menu() {
+  const [activeKategori, setActiveKategori] = useState<string>("Semua");
+
+  const filteredItems =
+    activeKategori === "Semua"
+      ? menuItems
+      : menuItems.filter((item) => item.kategori === activeKategori);
+
   return (
     <main id="menu" className="menu-unggulan-section">
       <div className="menu-header">
@@ -13,9 +21,28 @@ export default function Menu() {
         </p>
       </div>
 
+      <div className="menu-tabs" role="tablist" aria-label="Kategori menu">
+        {menuCategories.map((kategori) => (
+          <button
+            key={kategori}
+            type="button"
+            role="tab"
+            aria-selected={activeKategori === kategori}
+            className={`menu-tab ${activeKategori === kategori ? "aktif" : ""}`}
+            onClick={() => setActiveKategori(kategori)}
+          >
+            {kategori}
+          </button>
+        ))}
+      </div>
+
       <div className="grid-menu-unggulan">
-        {menuItems.map((item) => (
-          <div key={item.id} className="kartu-menu">
+        {filteredItems.map((item, index) => (
+          <div
+            key={`${activeKategori}-${item.id}`}
+            className="kartu-menu"
+            style={{ animationDelay: `${index * 90}ms` }}
+          >
             <div className="gambar-container">
               <span className="badge">{item.badge}</span>
               <img src={item.img} alt={item.title} loading="lazy" />

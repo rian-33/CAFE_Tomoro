@@ -8,4 +8,5 @@ export { default as Lokasi } from "./Lokasi/Lokasi";
 export { default as Testimoni } from "./Testimoni/Testimoni";
 export { default as Reservasi } from "./Reservasi/Reservasi";
 export { default as Footer } from "./Footer/Footer";
+export { default as CountUp } from "./CountUp/CountUp";
 export { default as ErrorBoundary } from "./ErrorBoundary/ErrorBoundary";
